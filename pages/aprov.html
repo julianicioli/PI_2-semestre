@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprovação - Fatec</title>
+    <link rel="stylesheet" href="../css/telas.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/modal.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="../img/logo-fatec_itapira.png" alt="Logo Fatec Itapira">
+        </div>
+    </header>
+
+    <div class="navbar">
+        <a href="menucoord.html">Menu</a>
+        <a href="menuprof.html"></a>
+        <a href="edital.html">Edital</a>
+        <a href="listaDiretor.html">Inscrições</a>
+        <a href="aprov.html">Aprovar</a>
+        <a href="../index.html">Sair</a>
+    </div>
+
+    <div class="container">
+        <div class="section-title">Análise de inscrições</div>
+        <br>
+        <table>
+            <thead>
+                <tr>
+                    <th>Unidade</th>
+                    <th>Nº inscrição</th>
+                    <th>Tipo HAE</th>
+                    <th>Professor</th>
+                    <th>Número da Matrícula</th>
+                    <th>Status</th>
+                    <th>Abrir Arquivo</th>
+                    <th>Aprovar</th>
+                    <th>Reprovar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Itapira</td>
+                    <td>001</td>
+                    <td>Estágio Supervisionado</td>
+                    <td>Prof. José Junior</td>
+                    <td>12345</td>
+                    <td id="status-001">Pendente</td>
+                    <td>
+                        <a href="Formulariopreenchido.html" target="_blank">
+                            <button class="btn-open">Abrir</button>
+                        </a>
+                    </td>
+                    <td>
+                        <button class="btn-approve" onclick="openApprovalModal('001')">Aprovar</button>
+                    </td>
+                    <td>
+                        <button class="btn-reject" onclick="rejectStatus('001')">Reprovar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Modal para aprovar -->
+        <div id="approvalModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Selecione a opção de aprovação</h2>
+                <form id="approvalForm">
+                    <label>
+                        <input type="radio" name="approvalType" value="total" checked> Aprovar Totalmente
+                    </label><br>
+                    <label>
+                        <input type="radio" name="approvalType" value="partial"> Aprovar Parcialmente
+                    </label><br><br>
+
+                    <!-- Seção de horas (inicialmente oculta) -->
+                    <div id="partialHoursSection" style="display: none;">
+                        <label for="hours">Quantidade de horas:</label>
+                        <input type="number" id="hours" name="hours" min="1" max="100"
+                            placeholder="Digite as horas"><br>
+                    </div><br>
+                    <button type="button" class="btn-confirm" onclick="submitApproval()">Confirmar</button>
+                </form>
+            </div>
+        </div>
+
+
+
+        <footer class="main-footer">
+            <a href="https://www.saopaulo.sp.gov.br/">
+                <img src="../img/logo-rodape-governo-do-estado-sp.png" alt="">
+            </a>
+        </footer>
+    </div>
+
+    <script src="../js/aprov.js"></script>
+</body>
+
+</html>
