@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Login - Fatec</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/footer.css">
+</head>
+<body>
+
+<div class="container" id="container">
+
+    <div class="form-container sign-in">
+        <form id="loginForm" onsubmit="validateLogin(event)">
+            <h1>Entrar</h1>
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <div class="toggle-container">
+        <div class="toggle">
+            <div class="toggle-panel toggle-right">
+                <h1>Seja bem-vindo!</h1>
+                <p>Faça o login aqui! 😊</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="main-footer">
+    <a href="https://www.saopaulo.sp.gov.br/">
+        <img src="./img/logo-rodape-governo-do-estado-sp.png" alt="Logo Governo do Estado de SP">
+    </a>
+</footer>
+
+
+<script src="js/login.js"></script>
+
+</body>
+</html>
